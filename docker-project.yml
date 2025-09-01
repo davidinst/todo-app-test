@@ -84,16 +84,16 @@
     container_name: postgre
     image_name: 046402772087.dkr.ecr.us-east-1.amazonaws.com/clarusway-repo-david/cw-todo-app:postgre
   tasks:
-    # - name: remove postgre container
-    #   community.docker.docker_container:
-    #     name: "{{ container_name }}"
-    #     state: absent
-    #     force_kill: true
+    - name: remove postgre container
+      community.docker.docker_container:
+        name: "{{ container_name }}"
+        state: absent
+        force_kill: true
 
-    # - name: remove postgre image
-    #   community.docker.docker_image:
-    #     name: "{{ image_name }}"
-    #     state: absent
+    - name: remove postgre image
+      community.docker.docker_image:
+        name: "{{ image_name }}"
+        state: absent
 
     - name: Launch postgresql docker container
       community.docker.docker_container:
