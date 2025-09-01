@@ -90,10 +90,10 @@
     #     state: absent
     #     force_kill: true
 
-    - name: remove postgre image
-      community.docker.docker_image:
-        name: "{{ image_name }}"
-        state: absent
+    # - name: remove postgre image
+    #   community.docker.docker_image:
+    #     name: "{{ image_name }}"
+    #     state: absent
 
     - name: Launch postgresql docker container
       community.docker.docker_container:
