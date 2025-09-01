@@ -29,7 +29,7 @@ resource "aws_instance" "managed_nodes" {
   iam_instance_profile = aws_iam_instance_profile.ec2-profile.name
   tags = {
     Name = "ansible_${element(var.tags, count.index )}"
-    stack = "ansible_project"
+    stack = "david-ansible_project"
     environment = "development"
   }
 
