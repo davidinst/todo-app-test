@@ -114,18 +114,18 @@ pipeline{
             sh 'docker image prune -af'
         }
 
-        failure {
+        // failure {
 
-            echo 'Delete the Image Repository on ECR due to the Failure'
-            sh """
-                aws ecr delete-repository \
-                  --repository-name ${APP_REPO_NAME} \
-                  --region ${AWS_REGION}\
-                  --force
-                """
-            echo 'Deleting Terraform Stack due to the Failure'
-                sh 'terraform destroy --auto-approve'
-        }
+        //     echo 'Delete the Image Repository on ECR due to the Failure'
+        //     sh """
+        //         aws ecr delete-repository \
+        //           --repository-name ${APP_REPO_NAME} \
+        //           --region ${AWS_REGION}\
+        //           --force
+        //         """
+        //     echo 'Deleting Terraform Stack due to the Failure'
+        //         sh 'terraform destroy --auto-approve'
+        // }
     }  
 
 }   
