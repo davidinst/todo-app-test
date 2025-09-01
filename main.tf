@@ -21,7 +21,7 @@ variable "tags" {
 }
 
 resource "aws_instance" "managed_nodes" {
-  ami = "ami-0c7af5fe939f2677f"
+  ami = "ami-00ca32bbc84273381"
   count = 3
   instance_type = "t3.small" 
   key_name = "davidskey"
